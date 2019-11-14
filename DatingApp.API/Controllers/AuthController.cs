@@ -12,6 +12,7 @@ using Microsoft.IdentityModel.Tokens;
 
 namespace DatingApp.API.Controllers
 {
+    
     [ApiController]
     [Route("api/[controller]")]
     public class AuthController : ControllerBase
@@ -37,6 +38,7 @@ namespace DatingApp.API.Controllers
             */
 
             userForRegisterDto.Username = userForRegisterDto.Username.ToLower();
+            
 
             if (await _repo.UserExists(userForRegisterDto.Username))
                 return BadRequest("Username already exists");
